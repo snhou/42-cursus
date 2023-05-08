@@ -3,4 +3,5 @@
 ## libft
 
 * [Makefile](README.md)
-* [Header file](libft/header-file.md)
+* [ft\_memset: Set Bytes to Value](libft/ft\_memset-set-bytes-to-value.md)
+* [ft\_bzero: Zero bytes in memory](libft/ft\_bzero-zero-bytes-in-memory.md)
