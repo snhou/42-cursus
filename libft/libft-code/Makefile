@@ -3,8 +3,8 @@ OUTPUT = out
 
 CFLAGS = -c -Wall -Werror -Wextra
 
-SRC = ft_strncmp.c
-OBJ = ft_*.o
+SRC = ft_*.c
+OBJ=$(SRC:.c=.o)
 CC = cc
 RM = /bin/rm -f
 
@@ -30,5 +30,9 @@ re: fclean all test
 test:
 	$(CC) main.c -L. $(NAME) -o $(OUTPUT)
 	./$(OUTPUT)
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 .PHONY: all clean fclean re test

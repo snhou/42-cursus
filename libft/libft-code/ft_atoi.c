@@ -6,7 +6,7 @@
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:05:10 by shou              #+#    #+#             */
-/*   Updated: 2023/05/04 13:04:27 by shou             ###   ########.fr       */
+/*   Updated: 2023/05/08 15:00:26 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,3 @@ int	ft_atoi(const char *str)
 	result *= sign;
 	return (result);
 }
-
-/*
-#include <stdlib.h>
-#include <stdio.h>
-int main(void)
-{
-	char *s = "  ---1453abc5667";
-	printf("%d\n", ft_atoi(s));
-	//printf("%d\n", atoi(s));
-}
-*/

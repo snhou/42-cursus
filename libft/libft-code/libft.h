@@ -6,7 +6,7 @@
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 11:33:25 by shou              #+#    #+#             */
-/*   Updated: 2023/05/05 17:17:59 by shou             ###   ########.fr       */
+/*   Updated: 2023/05/08 11:33:19 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <string.h>
+# include <stdio.h>
 
 int		ft_atoi(const char *str);
 int		ft_isalnum(int c);

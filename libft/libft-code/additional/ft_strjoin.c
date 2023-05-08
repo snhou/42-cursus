@@ -6,26 +6,13 @@
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:51:21 by shou              #+#    #+#             */
-/*   Updated: 2023/04/04 12:59:18 by shou             ###   ########.fr       */
+/*   Updated: 2023/05/08 10:40:03 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_strlen(char *str)
-{
-	int	idx;
-
-	idx = 0;
-	while (*(str + idx) != '\0')
-	{
-		idx++;
-	}
-	return (idx);
-}
-
-char	*ft_strcat(char *dest, char *src)
+static char	*ft_strcat(char *dest, char *src)
 {
 	int	i;
 	int	j;
@@ -44,7 +31,8 @@ char	*ft_strcat(char *dest, char *src)
 	return (dest);
 }
 
-char	*ft_strjoin(int size, char **strs, char *sep)
+//char	*ft_strjoin(int size, char **strs, char *sep)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		total_len;
 	int		sep_len;
