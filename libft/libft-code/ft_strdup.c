@@ -6,7 +6,7 @@
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 14:04:03 by shou              #+#    #+#             */
-/*   Updated: 2023/05/04 12:48:19 by shou             ###   ########.fr       */
+/*   Updated: 2023/05/09 15:53:43 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strdup(const char *src)
 	int		cur;
 
 	dup = (char *)malloc(ft_strlen(src) + 1);
+	if (!dup)
+		return (NULL);
 	cur = 0;
 	while (src[cur] != 0)
 	{
