@@ -6,13 +6,13 @@
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:05:10 by shou              #+#    #+#             */
-/*   Updated: 2023/05/08 15:00:26 by shou             ###   ########.fr       */
+/*   Updated: 2023/05/09 15:06:59 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	rm_spaces(const char *str, int *ptr_i)
+static int	rm_spaces(const char *str, int *ptr_i)
 {
 	int	count;
 	int	i;

@@ -6,7 +6,7 @@
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:38:31 by shou              #+#    #+#             */
-/*   Updated: 2023/05/08 11:21:35 by shou             ###   ########.fr       */
+/*   Updated: 2023/05/09 15:06:41 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,26 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 
 	i = 0;
 	j = 0;
-	if (to_find[0] == '\0')
+	if (!*to_find)
 		return ((char *) str);
-	while (str[i] != '\0' && i < len)
+	while (i < len && str[i])
 	{
-		while (str[i + j] == to_find[j] && str[i + j] && (i + j) < len)
+		while ((i + j) < len && str[i + j] == to_find[j] && str[i + j])
 			j++;
-		if (to_find[j] == '\0')
+		if (!to_find[j])
 			return ((char *) str + i);
-		i++;
 		j = 0;
+		i++;
 	}
 	return (NULL);
 }
 
 /*
 #include <bsd/string.h>
-cc -lbsd
+//cc -lbsd
 int main() {
-	printf("%s\n", ft_strnstr("TeAA BC", "AA", 4));
-	printf("%s\n", strnstr("TeAA BC", "AA", 4));
+	printf("%s\n", ft_strnstr("", "", 10));
+	printf("%s\n", strnstr("", "", 10));
 	return (0);
 }
 */

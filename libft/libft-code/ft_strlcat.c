@@ -6,7 +6,7 @@
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:38:56 by shou              #+#    #+#             */
-/*   Updated: 2023/05/04 13:37:35 by shou             ###   ########.fr       */
+/*   Updated: 2023/05/09 15:07:11 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	j = dest_len;
 	if (size == 0 || size <= dest_len)
 		return (src_len + size);
-	while (src[i] && (dest_len + i + 1 < size))
+	while ((dest_len + i + 1 < size) && src[i])
 	{
 		dest[j] = src[i];
 		i++;
