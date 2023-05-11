@@ -15,3 +15,8 @@ This function returns a pointer to the allocated memory, or NULL if the request 
 {% embed url="https://linux.die.net/man/3/calloc" %}
 
 {% embed url="https://www.tutorialspoint.com/c_standard_library/c_function_calloc.htm" %}
+
+* different with malloc:
+  * 2 arguments
+  * fill 0 in memory
+  * take more time

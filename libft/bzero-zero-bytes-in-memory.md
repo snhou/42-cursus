@@ -1,4 +1,4 @@
-# ft\_bzero: Zero bytes in memory
+# bzero: Zero bytes in memory
 
 ### Intro
 
@@ -7,7 +7,7 @@
 * prototype:&#x20;
 
 ```c
-void ft_bzero(void *s, size_t n);
+void bzero(void *s, size_t n);
 ```
 
 ### Learn
