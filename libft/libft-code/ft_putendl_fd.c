@@ -6,7 +6,16 @@
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 19:56:30 by shou              #+#    #+#             */
-/*   Updated: 2023/05/11 19:56:30 by shou             ###   ########.fr       */
+/*   Updated: 2023/05/15 15:49:46 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+void	ft_putendl_fd(char *s, int fd)
+{
+	if (!s || fd < 0)
+		return ;
+	ft_putstr_fd(s, fd);
+	ft_putstr_fd("\n", fd);
+}

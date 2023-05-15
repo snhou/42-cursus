@@ -6,70 +6,58 @@
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:50:34 by shou              #+#    #+#             */
-/*   Updated: 2023/05/02 13:50:36 by shou             ###   ########.fr       */
+/*   Updated: 2023/05/15 15:49:13 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h> //for main test
+#include "libft.h"
 
-static int	ft_strlen(const char *s)
+static int	length(int nb)
 {
-	int i;
+	int	s;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return i;
+	if (nb == 0)
+		return (1);
+	s = 0;
+	if (nb < 0)
+		s = 1;
+	while (nb)
+	{
+		s++;
+		nb = nb / 10;
+	}
+	return (s);
 }
 
-static char	*ft_strrev(char *str)
+char	*ft_itoa(int n)
 {
-	int i;
-	int j;
-	int tmp;
+	char			*str;
+	int				len;
+	unsigned int	num;
 
-	i = 0;
-	j = ft_strlen(str);
-	while (j > i)
+	len = length(n);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
+	len--;
+	str[len] = '0';
+	if (n < 0)
 	{
-		j--;
-		tmp = str[i];
-		str[i] = str[j];
-		str[j] = tmp;
-		i++;
+		str[0] = '-';
+		num = -n;
 	}
-	return str;
+	else
+		num = n;
+	while (num)
+	{
+		str[len] = ('0' + (num % 10));
+		num = num / 10;
+		len--;
+	}
+	return (str);
 }
-
-char	*ft_itoa(int nbr)
-{
-	int i;
-	int neg;
-	char *tmp;
-
-	i = 0;
-	neg = 0;
-	tmp = malloc(sizeof(char) * 12);
-	if (tmp == NULL || nbr == 0)
-		return ((nbr == 0) ? "0" : NULL);
-	if (nbr == -2147483648)
-		return ("-2147483648");
-	if (nbr < 0)
-	{
-		neg = 1;
-		nbr *= -1;
-	}
-	while (nbr)
-	{
-		tmp[i++] = (nbr % 10) + '0';
-		nbr /= 10;
-	}
-	if (neg)
-		tmp[i] = '-';
-	return ft_strrev(tmp);
-}
-
+/*
 int	main(void)
 {
 	int i = 0;
@@ -80,3 +68,4 @@ int	main(void)
 
 	return 0;
 }
+*/
