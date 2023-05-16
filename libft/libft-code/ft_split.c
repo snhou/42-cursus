@@ -6,66 +6,67 @@
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:49:36 by shou              #+#    #+#             */
-/*   Updated: 2023/05/15 15:46:38 by shou             ###   ########.fr       */
+/*   Updated: 2023/05/16 11:41:34 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_split_count(char const *s, char c)
+static int	numwords(char const *s, char c)
 {
-	int	count;
-	int	len;
-	int	i;
+	int	cur;
+	int	word_num;
 
-	count = 1;
-	len = 0;
-	i = -1;
-	if (!s || !*s)
-		return (count);
-	while (s[++i])
+	cur = 0;
+	word_num = 0;
+	while (s[cur] != 0)
 	{
-		if (s[i] != c)
-			++len;
-		else if (len && s[i] == c && ++count)
-			len = 0;
+		if (s[cur] != c && (s[cur + 1] == c || s[cur + 1] == 0))
+			word_num++;
+		cur++;
 	}
-	if (s[i - 1] == c)
-		return (count);
-	else
-		return (count + 1);
+	return (word_num);
 }
 
-static int	ft_split_create(char ***ret, char const *s, int i, int len)
+static int	split_words(char **result, char const *s, char c, int word)
 {
-	**ret = ft_substr(&s[i - len], 0, len);
-	(*ret)++;
+	int		start_cur;
+	int		end_cur;
+
+	end_cur = 0;
+	start_cur = 0;
+	while (s[end_cur])
+	{
+		if (s[end_cur] == c || s[end_cur] == 0)
+			start_cur = end_cur + 1;
+		if (s[end_cur] != c && (s[end_cur + 1] == c || s[end_cur + 1] == 0))
+		{
+			result[word] = malloc(sizeof(char) * (end_cur - start_cur + 2));
+			if (!result[word])
+			{
+				while (word++)
+					free(result[word]);
+				return (0);
+			}
+			ft_strlcpy(result[word], (s + start_cur), end_cur - start_cur + 2);
+			word++;
+		}
+		end_cur++;
+	}
+	result[word] = 0;
 	return (1);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**ret;
-	int		len;
-	int		i;
+	char	**result;
 
-	ret = (char **) malloc(ft_split_count(s, c) * sizeof(char *));
-	if (!ret)
+	if (!s)
 		return (NULL);
-	*ret = NULL;
-	len = 0;
-	i = -1;
-	if (!s || !*s)
-		return (ret);
-	while (s[++i])
-	{
-		if (s[i] != c)
-			++len;
-		else if (len && s[i] == c && ft_split_create(&ret, s, i, len))
-			len = 0;
-	}
-	if (s[i - 1] != c)
-		*ret++ = ft_substr(&s[i - len], 0, len);
-	*ret++ = NULL;
-	return (ret - ft_split_count(s, c));
+	result = malloc(sizeof(char *) * (numwords(s, c) + 1));
+	if (!result)
+		return (NULL);
+	if (!split_words(result, s, c, 0))
+		return (NULL);
+	return (result);
 }

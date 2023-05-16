@@ -55,7 +55,7 @@ clean:
 	${RM} *.o
 
 fclean: clean
-	${RM} $(NAME) $(OUTPUT) *.out libft.a
+	${RM} $(NAME) *.out libft.a
 
 re: fclean all
 

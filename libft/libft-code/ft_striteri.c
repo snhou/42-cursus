@@ -6,7 +6,7 @@
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 19:56:17 by shou              #+#    #+#             */
-/*   Updated: 2023/05/15 15:38:11 by shou             ###   ########.fr       */
+/*   Updated: 2023/05/16 11:50:04 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	int	i;
 
-	i = -1;
+	i = 0;
 	if (!s || !f)
 		return ;
-	while (s[++i])
+	while (s[i])
+	{
 		f((unsigned int) i, &s[i]);
+		i++;
+	}
 }
