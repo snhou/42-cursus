@@ -36,26 +36,37 @@ SRC = ft_atoi.c \
 	  ft_substr.c \
 	  ft_tolower.c \
 	  ft_toupper.c
+SRC_BONUS = ft_lstadd_back.c \
+			ft_lstadd_front.c \
+			ft_lstclear.c \
+			ft_lstdelone.c \
+			ft_lstiter.c \
+			ft_lstlast.c \
+			ft_lstmap.c \
+			ft_lstnew.c \
+			ft_lstsize.c 
+
 OBJ=$(SRC:.c=.o)
+OBJ_BONUS=$(SRC_BONUS:.c=.o)
 CC = cc
 RM = /bin/rm -f
-
-all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-$(OBJ):
-	$(CC) $(CFLAGS) -c $(SRC)
-
 %.o: %.c
-	$(CC) $(CFLAGS) -c -o $@ $^
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+all: $(NAME)
+
+bonus: $(OBJ) $(OBJ_BONUS)
+	ar rcs $(NAME) $^
 
 clean:
-	${RM} *.o
+	${RM} $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
-	${RM} $(NAME) *.out libft.a
+	${RM} $(NAME)
 
 re: fclean all
 
@@ -65,4 +76,4 @@ run:
 
 so: run fclean
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
