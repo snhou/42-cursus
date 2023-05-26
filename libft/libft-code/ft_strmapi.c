@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 19:56:11 by shou              #+#    #+#             */
-/*   Updated: 2023/05/15 16:02:50 by shou             ###   ########.fr       */
+/*   Updated: 2023/05/26 14:33:07 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,19 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	ret[i] = '\0';
 	return (ret);
 }
+/*
+static char	ft_test(unsigned int i, char str)
+{
+	printf("index:%d char:%c\n", i, str);
+	return (str - 32);
+}
+
+int	main(void)
+{
+	char *str= "hello";
+
+	printf("Before => %s\n", str);
+	printf("After => %s\n", ft_strmapi(str, ft_test));
+	return (0);
+}
+*/

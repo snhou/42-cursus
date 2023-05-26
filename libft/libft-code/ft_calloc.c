@@ -6,7 +6,7 @@
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:49:19 by shou              #+#    #+#             */
-/*   Updated: 2023/05/11 14:09:40 by shou             ###   ########.fr       */
+/*   Updated: 2023/05/26 16:42:16 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int main()
  
     // Get the number of elements for the array
     n = 5;
-    printf("Enter number of elements: %d\n", n);
  
     // Dynamically allocate memory using calloc()
     ptr = (int*)ft_calloc(1, sizeof(int));

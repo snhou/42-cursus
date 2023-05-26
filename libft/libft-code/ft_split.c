@@ -6,7 +6,7 @@
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:49:36 by shou              #+#    #+#             */
-/*   Updated: 2023/05/16 11:41:34 by shou             ###   ########.fr       */
+/*   Updated: 2023/05/26 17:00:23 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,3 +70,21 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (result);
 }
+/*
+//cc ft_split.c ft_putendl_fd.c ft_strlcpy.c ft_putstr_fd.c ft_strlen.c
+int	main(void)
+{
+	char	**tab;
+	unsigned int	i;
+
+	i = 0;
+	tab = ft_split("hello,sp    lit,,,,th,,,is,plz", ',');
+	if (!tab[0])
+		ft_putendl_fd("ok\n", 1);
+	while (tab[i] != NULL)
+	{
+		ft_putendl_fd(tab[i], 1);
+		i++;
+	}
+}
+*/

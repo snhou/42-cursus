@@ -6,7 +6,7 @@
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:06:43 by shou              #+#    #+#             */
-/*   Updated: 2023/05/08 14:43:28 by shou             ###   ########.fr       */
+/*   Updated: 2023/05/26 16:40:37 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ void	ft_bzero(void *s, size_t n)
 /*
 int main( void )
 {
-    char buffer[80] = "abc";
+    char buffer[5] = "abcd";
 
 	puts(buffer);
-    ft_bzero( buffer, 80 );
+    ft_bzero( buffer, 3 );
 	puts(buffer);
     return (0);
   }
