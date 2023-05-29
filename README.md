@@ -21,3 +21,17 @@ command_dependency: command_echo
     echo $(TEXT)
 </code></pre>
 
+```
+%.o: %.foo
+    fooc $(FOOFLAGS) -o $@ -c $<
+Then, whenever make needs to build xyzzy.o, and there is a file named xyzzy.foo, it will use that rule to compile it.
+```
+
+```
+all: library.cpp main.cpp
+In this case:
+
+$@ evaluates to all
+$< evaluates to library.cpp
+$^ evaluates to library.cpp main.cpp
+```

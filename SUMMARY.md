@@ -4,11 +4,11 @@
 
 * [Makefile](README.md)
 * [memory allocation](libft/memory-allocation/README.md)
-  * [memcpy](libft/memory-allocation/memcpy.md)
-  * [memchr](libft/memory-allocation/memchr.md)
-  * [memset: Set Bytes to Value](libft/memory-allocation/memset-set-bytes-to-value.md)
-  * [bzero: Zero bytes in memory](libft/memory-allocation/bzero-zero-bytes-in-memory.md)
-  * [calloc: allocate memory](libft/memory-allocation/calloc-allocate-memory.md)
+  * [memcpy](libft/memcpy.md)
+  * [memchr](libft/memchr.md)
+  * [memset: Set Bytes to Value](libft/memset-set-bytes-to-value.md)
+  * [bzero: Zero bytes in memory](libft/bzero-zero-bytes-in-memory.md)
+  * [calloc: allocate memory](libft/calloc-allocate-memory.md)
 
 ***
 

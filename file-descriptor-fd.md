@@ -1,10 +1,6 @@
 # File descriptor(fd)
 
-|   |                          |
-| - | ------------------------ |
-| 0 | Standard input (stdin)   |
-| 1 | Standard output (stdout) |
-| 2 | Standard error (stderr)  |
+<table><thead><tr><th width="103"></th><th></th></tr></thead><tbody><tr><td>0</td><td>Standard input (stdin)</td></tr><tr><td>1</td><td>Standard output (stdout)</td></tr><tr><td>2</td><td>Standard error (stderr)</td></tr></tbody></table>
 
 {% embed url="https://www.computerhope.com/jargon/f/file-descriptor.htm" %}
 

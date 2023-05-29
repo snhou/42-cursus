@@ -1,4 +1,4 @@
-# ft\_memset: Set Bytes to Value
+# memset: Set Bytes to Value
 
 ### Intro
 
