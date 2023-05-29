@@ -9,13 +9,10 @@
   * [memset: Set Bytes to Value](libft/memset-set-bytes-to-value.md)
   * [bzero: Zero bytes in memory](libft/bzero-zero-bytes-in-memory.md)
   * [calloc: allocate memory](libft/calloc-allocate-memory.md)
-
-***
-
-* [File descriptor(fd)](file-descriptor-fd.md)
-* [Function as a Parameter](function-as-a-parameter/README.md)
-  * [strmapi](function-as-a-parameter/strmapi.md)
-  * [striteri](function-as-a-parameter/striteri.md)
-* [Structures](structures.md)
-* [Linked lists](linked-lists/README.md)
-  * [ft\_lstadd\_front](linked-lists/ft\_lstadd\_front.md)
+* [File descriptor(fd)](libft/file-descriptor-fd.md)
+* [Function as a Parameter](libft/function-as-a-parameter/README.md)
+  * [strmapi](libft/function-as-a-parameter/strmapi.md)
+  * [striteri](libft/function-as-a-parameter/striteri.md)
+* [Structures](libft/structures.md)
+* [Linked lists](libft/linked-lists/README.md)
+  * [ft\_lstadd\_front](libft/linked-lists/ft\_lstadd\_front.md)
