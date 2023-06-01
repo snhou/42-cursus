@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 13:28:44 by shou              #+#    #+#             */
-/*   Updated: 2023/05/31 14:38:54 by shou             ###   ########.fr       */
+/*   Created: 2023/03/20 12:31:21 by shou              #+#    #+#             */
+/*   Updated: 2023/06/01 15:25:09 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strcapitalize(char *s)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	idx;
 
-	i = 0;
-	while (s[i])
+	idx = 0;
+	while (*(str + idx) != '\0')
 	{
-		if ((s[i] >= 'a') && (s[i] <= 'z'))
-			s[i] -= 32;
-		i++;
+		idx++;
 	}
-	return (s);
+	return (idx);
 }

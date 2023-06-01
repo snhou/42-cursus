@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ptr_setstring.c                                 :+:      :+:    :+:   */
+/*   ft_unbrlen_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 13:29:35 by shou              #+#    #+#             */
-/*   Updated: 2023/05/31 14:39:15 by shou             ###   ########.fr       */
+/*   Created: 2023/05/31 13:28:34 by shou              #+#    #+#             */
+/*   Updated: 2023/06/01 15:25:12 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_ptr_setstring(const char *s)
+size_t	ft_unbrlen_base(unsigned long long int n, size_t base)
 {
-	int		i;
-	char	*ptr;
+	size_t	i;
 
-	i = 0;
-	while (s[i])
-		i++;
-	ptr = (char *)malloc(1 + i * sizeof(char));
-	if (!ptr)
-		return ("NULL");
-	i = 0;
-	while (s[i])
+	i = 1;
+	while (n >= (unsigned long long int)base)
 	{
-		ptr[i] = s[i];
+		n /= base;
 		i++;
 	}
-	ptr[i] = '\0';
-	return (ptr);
+	return (i);
 }

@@ -6,11 +6,11 @@
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 13:29:23 by shou              #+#    #+#             */
-/*   Updated: 2023/05/31 14:39:11 by shou             ###   ########.fr       */
+/*   Updated: 2023/06/01 15:24:51 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int	ft_puthexa_u(unsigned long long int n, char format)
 {

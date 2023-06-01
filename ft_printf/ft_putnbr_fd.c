@@ -6,11 +6,24 @@
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 14:43:40 by shou              #+#    #+#             */
-/*   Updated: 2023/05/31 14:43:41 by shou             ###   ########.fr       */
+/*   Updated: 2023/06/01 15:24:54 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
+
+size_t	ft_nbrlen_base(long long int n, size_t base)
+{
+	size_t	i;
+
+	i = 1;
+	while (n >= (long long int)base)
+	{
+		n /= base;
+		i++;
+	}
+	return (i);
+}
 
 int	ft_putnbr_fd(long long int n, int fd)
 {

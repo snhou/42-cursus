@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shou <shou@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 10:34:42 by shou              #+#    #+#             */
-/*   Updated: 2023/05/31 14:38:52 by shou             ###   ########.fr       */
+/*   Created: 2023/05/31 13:29:02 by shou              #+#    #+#             */
+/*   Updated: 2023/06/01 15:24:57 by shou             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_putstr(char	*s)
 {
 	int	i;
 
-	i = -1;
-	while (++i < (int)ft_strlen(s) + 1)
-		if (*(s + i) == (char)c)
-			return ((char *)s + i);
-	return (NULL);
+	i = 0;
+	if (!s)
+		return (write(1, "(null)", 6));
+	while (s[i])
+		i++;
+	return (write(1, s, i));
 }
